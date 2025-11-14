@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>体重管理サイト</title>
+  <link rel="stylesheet" href="../portfolio/css/food.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="modern-header">
+    <div class="header-logo">Portfolio</div>
+    <nav class="header-nav">
+      <a href="index.html">← ポートフォリオに戻る</a>
+    </nav>
+  </header>
+
+<section class="photo-slider">
+  <div class="slider-container">
+    <div class="slides">
+      <img src="../portfolio/img/taijuu1.png" alt="体重管理サイト写真1">
+      <img src="../portfolio/img/taijuu2.png" alt="体重管理サイト写真2">
+      <img src="../portfolio/img/taijuu3.png" alt="体重管理サイト写真3">
+      <img src="../portfolio/img/taijuu4.png" alt="体重管理サイト写真4">
+      <img src="../portfolio/img/taijuu5.png" alt="体重管理サイト写真5">
+    </div>
+<button class="prev">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="15 18 9 12 15 6"/>
+  </svg>
+</button>
+
+<button class="next">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="9 18 15 12 9 6"/>
+  </svg>
+</button>
+  </div>
+</section>
+
+
+
+  <main class="modern-portfolio">
+    <div class="portfolio-item" style="width: 100%; max-width: 800px; margin: 0 auto;">
+      <h2 class="portfolio-title">体重管理サイト</h2>
+      
+      <section class="skill-card">
+        <h3>概要</h3>
+        <p>このサイトは、基本的な体重管理サイトです。</p>
+        <p>ログインしなくてもBMIを計測でき、おおまかな体系も診断してくれます</p>
+        <p>ログインすると、体重の履歴をつけることができ、グラフで体重の増減をみることもできます。</p>
+      </section>
+
+      <section class="skill-card" style="margin-top: 20px;">
+        <h3>技術スタック</h3>
+        <ul class="skill-list">
+          <li>Django</li>
+          <li>HTML / CSS</li>
+        </ul>
+      </section>
+
+      <section class="skill-card" style="margin-top: 20px;">
+        <h3>学習開始日</h3>
+        <p>2025年6月</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 吉武 沙梛. All rights reserved.</p>
+  </footer>
+</body>
+
+<script>
+  const slides = document.querySelector('.slides');
+  const slideImages = document.querySelectorAll('.slides img');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  let index = 0;
+  const total = slideImages.length;
+
+  function updateSlide() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % total;
+    updateSlide();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + total) % total;
+    updateSlide();
+  });
+</script>
+</html>

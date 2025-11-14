@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ハッカソン作品</title>
+  <link rel="stylesheet" href="../portfolio/css/hack.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="modern-header">
+    <div class="header-logo">Portfolio</div>
+    <nav class="header-nav">
+      <a href="index.html">← ポートフォリオに戻る</a>
+    </nav>
+  </header>
+
+  <!-- スライダー -->
+  <section class="photo-slider">
+    <div class="slider-container">
+      <div class="slides">
+        <img src="../portfolio/img/hack1.png" alt="ハッカソン写真1">
+        <img src="../portfolio/img/hack2.png" alt="ハッカソン写真2">
+        <img src="../portfolio/img/hack3.png" alt="ハッカソン写真3">
+        <img src="../portfolio/img/hack4.png" alt="ハッカソン写真4">
+        <img src="../portfolio/img/hack5.png" alt="ハッカソン写真5">
+        <img src="../portfolio/img/hack6.png" alt="ハッカソン写真6">
+        <img src="../portfolio/img/AI.jpg" alt="AIで加工した後の写真">
+
+      </div>
+
+      <button class="prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+
+      <button class="next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- メインコンテンツ -->
+  <main class="modern-portfolio">
+    <div class="portfolio-item" style="width: 100%; max-width: 800px; margin: 0 auto;">
+      <h2 class="portfolio-title">思い出再現AIアプリ</h2>
+
+      <!-- 製品概要 -->
+      <section class="skill-card">
+        <h3>製品概要</h3>
+        <p>
+          「過去の思い出の場所を“今の姿”で見ることはできても、当時の天気や雰囲気を再現するのは難しい」──  
+          そんな課題から生まれた、“思い出の風景をAIで再現する”サービスです。<br><br>
+          座標（位置情報）と日付を入力するだけで、当日の天気データをもとにAIが風景画像を生成します。  
+          写真がなくても、その時の空気感をもう一度感じることができます。<br>
+
+        </p>
+      </section>
+
+      <!-- 開発技術 -->
+      <section class="skill-card" style="margin-top: 20px;">
+        <h3>開発技術</h3>
+        <ul class="skill-list">
+          <li><strong>フロントエンド:</strong> Next.js / React</li>
+          <li><strong>バックエンド:</strong> Django REST Framework</li>
+          <li><strong>主要API:</strong> OpenAI API, Visual Crossing Weather API, Google Street View Static API</li>
+          <li><strong>ライブラリ・モジュール:</strong> requests, Pillow (PIL), dotenv, openai, io, base64, os</li>
+          <li><strong>デバイス:</strong> PCブラウザ（開発・検証用）</li>
+        </ul>
+      </section>
+
+      <!-- 製品説明 -->
+      <section class="skill-card" style="margin-top: 20px;">
+        <h3>製品説明</h3>
+        <p>
+          本アプリは、地図座標（緯度・経度）と日付を入力すると、以下の3つのプロセスで動作します：
+        </p>
+        <ol style="text-align:left; display:inline-block; margin:0 auto;">
+          <li>Google Street Viewから現地画像を取得</li>
+          <li>Visual Crossing Weather APIで当日の天気を取得</li>
+          <li>OpenAIの画像生成モデルで天気に合わせた画像を生成</li>
+        </ol>
+        <p>
+          フロントエンド（Next.js）とバックエンド（Django REST Framework）が連携し、  
+          シンプルで直感的に使えるUIを実現しました。<br>
+          <strong>※精度が低いですが一番最後の写真がAI加工後の写真です。</strong>
+        </p>
+      </section>
+
+
+      <!-- 今後の展望 -->
+      <section class="skill-card" style="margin-top: 20px;">
+        <h3>今後の展望</h3>
+        <ul class="skill-list">
+          <li>AI画像生成の精度向上</li>
+          <li>生成時間の短縮</li>
+          <li>スマートフォンブラウザへの最適化</li>
+        </ul>
+      </section>
+
+
+
+
+      <!-- 開発期間 -->
+      <section class="skill-card" style="margin-top: 20px;">
+        <h3>開発期間</h3>
+        <p>2025年10月18日 - 2025年10月19日（24時間）</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- フッター -->
+  <footer>
+    <p>&copy; 2025 吉武 沙梛. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const slideImages = document.querySelectorAll('.slides img');
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    let index = 0;
+    const total = slideImages.length;
+
+    function updateSlide() {
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % total;
+      updateSlide();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + total) % total;
+      updateSlide();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ポートフォリオ{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="modern-header">
+    <div class="header-logo">吉武 沙梛 Portfolio</div>
+    <nav class="header-nav">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('skills') }}">Skills</a>
+        <a href="{{ url_for('profile') }}">Profile</a>
+        <a href="{{ url_for('portfolio') }}">Portfolio</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+</header>
+
+<!-- メインコンテンツ -->
+<main>
+    {% block content %}
+    <!-- 各詳細ページごとのコンテンツがここに入る -->
+    {% endblock %}
+</main>
+
+<!-- フッター -->
+<footer>
+    <p>&copy; 2025 吉武 沙梛. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

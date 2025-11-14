@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>にゅーすさいと</title>
+  <link rel="stylesheet" href="../portfolio/css/twitter.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="modern-header">
+    <div class="header-logo">Portfolio</div>
+    <nav class="header-nav">
+      <a href="index.html">← ポートフォリオに戻る</a>
+    </nav>
+  </header>
+
+
+  <section class="photo-slider">
+  <div class="slider-container">
+    <div class="slides">
+      <img src="../portfolio/img/tyuwitter1.png" alt="学生管理サイト1">
+      <img src="../portfolio/img/tyuwitter2.png" alt="学生管理サイト2">
+      <img src="../portfolio/img/tyuwitter3.png" alt="学生管理サイト3">
+      <img src="../portfolio/img/tyuwitter4.png" alt="学生管理サイト4">
+      <img src="../portfolio/img/tyuwitter5.png" alt="学生管理サイト5">
+    </div>
+<button class="prev">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="15 18 9 12 15 6"/>
+  </svg>
+</button>
+
+<button class="next">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="9 18 15 12 9 6"/>
+  </svg>
+</button>
+  </div>
+</section>
+
+  <main class="modern-portfolio">
+    <div class="portfolio-item" style="width: 100%; max-width: 800px; margin: 0 auto;">
+      <h2 class="portfolio-title">にゅーすサイト</h2>
+      
+      <section class="skill-card">
+        <h3>概要</h3>
+        <p>このサイトは、SNSの仕組みを学ぶ目的で制作した模倣SNSサイトです。
+ログイン・ログアウト機能やメールでのお問い合わせ機能、ログイン後のツイート投稿機能を実装しました。
+初めての開発でしたが、デザインやCSSもすべて自分で作成し、SNSの基本的な流れを理解できるように工夫しました。</p>
+      </section>
+
+      <section class="skill-card" style="margin-top: 20px;">
+        <h3>技術スタック</h3>
+        <ul class="skill-list">
+          <li>Django</li>
+          <li>HTML / CSS</li>
+        </ul>
+      </section>
+
+      <section class="skill-card" style="margin-top: 20px;">
+        <h3>学習開始日</h3>
+        <p>2025年1月</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 吉武 沙梛. All rights reserved.</p>
+  </footer>
+</body>
+
+
+<script>
+  const slides = document.querySelector('.slides');
+  const slideImages = document.querySelectorAll('.slides img');
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  let index = 0;
+  const total = slideImages.length;
+
+  function updateSlide() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % total;
+    updateSlide();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + total) % total;
+    updateSlide();
+  });
+</script>
+
+</html>
