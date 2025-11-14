@@ -467,3 +467,139 @@ footer {
   content: "🐈 ";
   font-size: 1.1rem;
 }
+
+/* ===============================
+   📸 詳細ページ用スタイル
+================================ */
+
+/* 詳細ページのメイン */
+main.modern-portfolio {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.portfolio-title {
+  font-size: 1.8rem;
+  color: #3a6ea5;
+  text-align: center;
+  margin-bottom: 32px;
+  border-bottom: 2px solid #a3c9e2;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* 各セクション（カード）*/
+.skill-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.skill-card h3 {
+  color: #2c4b7c;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  border-left: 4px solid #a3c9e2;
+  padding-left: 8px;
+}
+
+.skill-card p,
+.skill-card li {
+  font-size: 1rem;
+  color: #444;
+}
+
+.skill-list {
+  list-style: disc inside;
+  margin: 0;
+  padding-left: 12px;
+}
+
+/* ==========================
+   📷 スライダー全体（写真）
+========================== */
+.photo-slider {
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  position: relative;
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* スライド部分 */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  background-color: #f5f5f5;
+  border-radius: 0;
+}
+
+/* ==========================
+   ⬅️ ➡️ スライダーボタン（SVG版）
+========================== */
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+button.prev:hover,
+button.next:hover {
+  background: rgba(163, 201, 226, 0.9);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* 左右位置 */
+button.prev {
+  left: 20px;
+}
+button.next {
+  right: 20px;
+}
+
+/* SVGアイコンのサイズと色 */
+button.prev svg,
+button.next svg {
+  width: 26px;
+  height: 26px;
+  stroke: #1b1e20;
+  stroke-width: 2.5;
+  transition: stroke 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+}
+
+button.prev:hover svg,
+button.next:hover svg {
+  stroke: #ffffff;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+}
